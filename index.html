@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="IMPROMPTTU — Creative Intelligence Platform + Studio." />
+  <title>IMPROMPTTU — Creative Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-noise" aria-hidden="true"></div>
+  <header class="nav shell">
+    <a class="wordmark" href="#top" aria-label="IMPROMPTTU inicio">
+      <span>IMPR</span><span class="logo-o" aria-hidden="true"><i></i></span><span>MPTTU</span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#platform">Platform</a>
+      <a href="#studio">Studio</a>
+      <a href="#consulting">Consulting</a>
+      <a href="#pricing">Pricing</a>
+    </nav>
+    <a class="pill pill-light" href="#create">Start creating <span>↗</span></a>
+  </header>
+
+  <main id="top">
+    <section class="hero shell">
+      <div class="hero-kicker"><span class="dot"></span> Creative Intelligence Platform + Studio</div>
+      <h1>YOUR IDEA.<br><span class="accent">THE RIGHT INTELLIGENCE.</span><br>ONE PLACE.</h1>
+      <div class="hero-grid">
+        <p class="hero-copy">Crea imágenes, video, audio, ideas y campañas con una sola plataforma. Cuando necesitas más craft, nuestro equipo entra exactamente donde tú lo dejaste.</p>
+        <div class="hero-actions">
+          <a class="pill pill-accent" href="#create">Create now <span>↗</span></a>
+          <a class="text-link" href="#studio">Bring in a human <span>→</span></a>
+        </div>
+      </div>
+
+      <div class="prompt-stage" id="create">
+        <div class="prompt-topline">
+          <span>[01] PROMPT</span>
+          <span class="status"><i></i> Intelligent routing active</span>
+        </div>
+        <form id="promptForm" class="prompt-form">
+          <label for="promptInput">¿Qué quieres crear hoy?</label>
+          <div class="prompt-field">
+            <textarea id="promptInput" rows="2" placeholder="Un spot cinematográfico de 15 segundos para una nueva marca de café..." required></textarea>
+            <button type="submit" aria-label="Generar">↗</button>
+          </div>
+          <div class="type-row" role="group" aria-label="Tipo de contenido">
+            <button type="button" class="chip active" data-type="Image">Image</button>
+            <button type="button" class="chip" data-type="Video">Video</button>
+            <button type="button" class="chip" data-type="Audio">Audio</button>
+            <button type="button" class="chip" data-type="Copy">Copy</button>
+            <button type="button" class="chip" data-type="Campaign">Campaign</button>
+          </div>
+        </form>
+        <div class="route-result" id="routeResult" aria-live="polite">
+          <div><span class="route-label">ROUTE</span><strong id="routeModel">Ready when you are.</strong></div>
+          <div><span class="route-label">MODE</span><strong id="routeMode">Automatic</strong></div>
+          <div><span class="route-label">WHY</span><strong id="routeWhy">Best balance of quality, speed and cost.</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto shell" id="platform">
+      <div class="section-index">[02] PLATFORM</div>
+      <div class="manifesto-grid">
+        <h2>ONE PROMPT.<br>THE RIGHT<br><span class="accent">INTELLIGENCE.</span></h2>
+        <div class="manifesto-copy">
+          <p>IMPROMPTTU no te obliga a escoger entre veinte modelos. Entiende qué quieres lograr y enruta cada tarea hacia la mejor combinación de inteligencia, calidad, velocidad y costo.</p>
+          <div class="mini-stats">
+            <div><b>01</b><span>Describe the idea</span></div>
+            <div><b>02</b><span>We route the task</span></div>
+            <div><b>03</b><span>You get the output</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="visual-rail" aria-label="Capacidades de la plataforma">
+        <article class="rail-card image-card"><span>IMAGE</span><div class="orb orb-a"></div><p>Concepts, key visuals, edits and brand systems.</p></article>
+        <article class="rail-card video-card"><span>VIDEO</span><div class="frame-lines"></div><p>Draft fast. Render premium only when it matters.</p></article>
+        <article class="rail-card audio-card"><span>AUDIO</span><div class="wave"></div><p>Voice, music, sound design and dubbing.</p></article>
+        <article class="rail-card brand-card"><span>BRAND BRAIN</span><div class="orb orb-b"></div><p>Your brand context travels with every prompt.</p></article>
+      </div>
+    </section>
+
+    <section class="human shell" id="studio">
+      <div class="section-index">[03] STUDIO</div>
+      <div class="human-panel">
+        <div class="portrait-art" aria-hidden="true">
+          <div class="portrait-core"></div>
+          <div class="portrait-glow"></div>
+          <div class="portrait-caption">HUMAN CRAFT / MACHINE SCALE</div>
+        </div>
+        <div class="human-copy">
+          <span class="eyebrow">WHEN GOOD ISN'T GOOD ENOUGH</span>
+          <h2>AI GETS YOU THERE.<br><span>CRAFT TAKES YOU FURTHER.</span></h2>
+          <p>Dirección creativa, diseño, cinematografía, producción, VFX/SFX, edición y copywriting. Nuestro equipo entra al proyecto con todo el contexto, las referencias y el historial creativo intactos.</p>
+          <a class="pill pill-light" href="mailto:hello@imprompttu.com?subject=IMPROMPTTU%20Studio">Bring in a human <span>↗</span></a>
+        </div>
+      </div>
+      <div class="expertise-grid">
+        <div><span>01</span><b>Creative Direction</b></div>
+        <div><span>02</span><b>Design + AI Art Direction</b></div>
+        <div><span>03</span><b>Cinematography</b></div>
+        <div><span>04</span><b>Production</b></div>
+        <div><span>05</span><b>VFX / SFX</b></div>
+        <div><span>06</span><b>Editing + Copy</b></div>
+      </div>
+    </section>
+
+    <section class="three-ways shell" id="consulting">
+      <div class="section-index">[04] THREE WAYS TO WORK</div>
+      <div class="way-grid">
+        <article><span class="way-no">01</span><h3>CREATE IT.</h3><p>Platform</p><small>Una plataforma para crear con IA sin cambiar de herramienta cada cinco minutos.</small><a href="#pricing">Explore Platform →</a></article>
+        <article><span class="way-no">02</span><h3>MAKE IT<br>EXCEPTIONAL.</h3><p>Studio</p><small>Expertos que elevan la idea, el craft y la ejecución cuando importa.</small><a href="mailto:hello@imprompttu.com?subject=IMPROMPTTU%20Studio">Meet the Studio →</a></article>
+        <article><span class="way-no">03</span><h3>CHANGE HOW<br>YOU CREATE.</h3><p>Consulting</p><small>Rediseñamos workflows, adopción, governance y capacidades creativas con IA.</small><a href="mailto:hello@imprompttu.com?subject=IMPROMPTTU%20Consulting">Talk to Consulting →</a></article>
+      </div>
+    </section>
+
+    <section class="pricing shell" id="pricing">
+      <div class="section-index">[05] PRICING</div>
+      <div class="pricing-head"><h2>ONE FLAT FEE.<br><span class="accent">SERIOUS CREATIVE POWER.</span></h2><p>Unlimited text + image creation under fair use, with included video rendering and access to expert craft when you need it.</p></div>
+      <div class="price-grid">
+        <article class="price-card"><div><span>CREATE</span><h3>$59<small>/mo</small></h3></div><ul><li>Unlimited* text + image</li><li>2 min standard video</li><li>15 sec premium render</li><li>1 workspace</li></ul><a class="pill pill-dark" href="mailto:hello@imprompttu.com?subject=IMPROMPTTU%20Create">Start Create ↗</a></article>
+        <article class="price-card featured"><div class="best">MOST POPULAR</div><div><span>PRO</span><h3>$179<small>/mo</small></h3></div><ul><li>Everything in Create</li><li>6 min standard video</li><li>60 sec premium render</li><li>Brand Brain + priority</li></ul><a class="pill pill-accent" href="mailto:hello@imprompttu.com?subject=IMPROMPTTU%20Pro">Start Pro ↗</a></article>
+        <article class="price-card"><div><span>STUDIO</span><h3>$499<small>/mo</small></h3></div><ul><li>Everything in Pro</li><li>20 min standard video</li><li>180 sec premium render</li><li>Teams + collaboration</li></ul><a class="pill pill-dark" href="mailto:hello@imprompttu.com?subject=IMPROMPTTU%20Studio%20Plan">Start Studio ↗</a></article>
+      </div><p class="fair-use">* Fair-use and rate limits apply. Premium rendering allowance varies by model and resolution.</p>
+    </section>
+
+    <section class="final-cta shell"><div class="cta-kicker">[06] YOUR MOVE</div><h2>THE INTELLIGENCE<br>ISN'T ARTIFICIAL.<br><span>THE POSSIBILITIES ARE.</span></h2><a class="giant-prompt" href="#create"><span>What will you create?</span><b>↗</b></a></section>
+  </main>
+
+  <footer class="footer shell"><a class="wordmark" href="#top"><span>IMPR</span><span class="logo-o"><i></i></span><span>MPTTU</span></a><div><p>Creative Intelligence Platform + Studio.</p><p>Human ideas. Machine possibility.</p></div><div><a href="#platform">Platform</a><a href="#studio">Studio</a><a href="#consulting">Consulting</a><a href="#pricing">Pricing</a></div><div><a href="mailto:hello@imprompttu.com">hello@imprompttu.com</a><span>© 2026 IMPROMPTTU</span></div></footer>
+  <script src="script.js"></script>
+</body>
+</html>
