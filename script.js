@@ -1,32 +1,92 @@
 (() => {
+  const translations = {
+    es: {
+      'nav.platform':'Plataforma','nav.studio':'Estudio','nav.consulting':'Consultoría','nav.pricing':'Precios','nav.cta':'Empieza a crear',
+      'hero.kicker':'Plataforma de Inteligencia Creativa + Estudio','hero.title':'TU IDEA.<br><span class="accent">LA INTELIGENCIA CORRECTA.</span><br>EN UN SOLO LUGAR.','hero.copy':'Crea imágenes, video, audio, ideas y campañas desde una sola plataforma. Cuando necesitas más oficio, nuestro equipo entra exactamente donde tú lo dejaste.','hero.create':'Crear ahora','hero.human':'Sumar talento humano',
+      'prompt.status':'Enrutamiento inteligente activo','prompt.label':'¿Qué quieres crear hoy?','prompt.placeholder':'Un spot cinematográfico de 15 segundos para una nueva marca de café...','types.image':'Imagen','types.video':'Video','types.audio':'Audio','types.copy':'Copy','types.campaign':'Campaña','route.route':'RUTA','route.mode':'MODO','route.why':'POR QUÉ',
+      'platform.label':'PLATAFORMA','platform.title':'UN PROMPT.<br>LA INTELIGENCIA<br><span class="accent">CORRECTA.</span>','platform.copy':'IMPROMPTTU no te obliga a escoger entre veinte modelos. Entiende qué quieres lograr y enruta cada tarea hacia la mejor combinación de inteligencia, calidad, velocidad y costo.','platform.step1':'Describe la idea','platform.step2':'Enrutamos la tarea','platform.step3':'Recibes el resultado',
+      'cards.imageTitle':'IMAGEN','cards.image':'Conceptos, key visuals, ediciones y sistemas de marca.','cards.video':'Boceta rápido. Renderiza en premium solo cuando importa.','cards.audio':'Voz, música, diseño sonoro y doblaje.','cards.brand':'El contexto de tu marca viaja con cada prompt.',
+      'studio.label':'ESTUDIO','studio.caption':'OFICIO HUMANO / ESCALA DE MÁQUINA','studio.eyebrow':'CUANDO BUENO NO ES SUFICIENTE','studio.title':'LA IA TE LLEVA LEJOS.<br><span>EL OFICIO TE LLEVA MÁS ALLÁ.</span>','studio.copy':'Dirección creativa, diseño, cinematografía, producción, VFX/SFX, edición y copywriting. Nuestro equipo entra al proyecto con todo el contexto, las referencias y el historial creativo intactos.','studio.cta':'Sumar talento humano',
+      'expertise.creative':'Dirección creativa','expertise.design':'Diseño + Dirección de arte IA','expertise.cinema':'Cinematografía','expertise.production':'Producción','expertise.editing':'Edición + Copy',
+      'ways.label':'TRES FORMAS DE TRABAJAR','ways.oneTitle':'CRÉALO.','ways.platform':'Plataforma','ways.oneCopy':'Una plataforma para crear con IA sin cambiar de herramienta cada cinco minutos.','ways.oneCta':'Explorar plataforma →','ways.twoTitle':'HAZLO<br>EXCEPCIONAL.','ways.studio':'Estudio','ways.twoCopy':'Expertos que elevan la idea, el oficio y la ejecución cuando importa.','ways.twoCta':'Conocer el estudio →','ways.threeTitle':'CAMBIA CÓMO<br>CREAS.','ways.consulting':'Consultoría','ways.threeCopy':'Rediseñamos flujos de trabajo, adopción, gobierno y capacidades creativas con IA.','ways.threeCta':'Hablar con consultoría →',
+      'pricing.label':'PRECIOS','pricing.title':'UNA TARIFA PLANA.<br><span class="accent">POTENCIA CREATIVA REAL.</span>','pricing.copy':'Creación de texto e imagen ilimitada bajo uso razonable, con video incluido y acceso a talento experto cuando lo necesitas.','pricing.create1':'Texto + imagen ilimitados*','pricing.create2':'2 min de video estándar','pricing.create3':'15 s de render premium','pricing.create4':'1 espacio de trabajo','pricing.popular':'MÁS POPULAR','pricing.pro1':'Todo lo incluido en Create','pricing.pro2':'6 min de video estándar','pricing.pro3':'60 s de render premium','pricing.pro4':'Brand Brain + prioridad','pricing.studio1':'Todo lo incluido en Pro','pricing.studio2':'20 min de video estándar','pricing.studio3':'180 s de render premium','pricing.studio4':'Equipos + colaboración','pricing.startCreate':'Empezar Create','pricing.startPro':'Empezar Pro','pricing.startStudio':'Empezar Studio','pricing.fair':'* Aplican límites de uso razonable. La disponibilidad de render premium varía según modelo y resolución.',
+      'final.kicker':'TU TURNO','final.title':'LA INTELIGENCIA<br>NO ES ARTIFICIAL.<br><span>LAS POSIBILIDADES SÍ.</span>','final.cta':'¿Qué vas a crear?','footer.one':'Plataforma de Inteligencia Creativa + Estudio.','footer.two':'Ideas humanas. Posibilidades de máquina.'
+    },
+    en: {
+      'nav.platform':'Platform','nav.studio':'Studio','nav.consulting':'Consulting','nav.pricing':'Pricing','nav.cta':'Start creating',
+      'hero.kicker':'Creative Intelligence Platform + Studio','hero.title':'YOUR IDEA.<br><span class="accent">THE RIGHT INTELLIGENCE.</span><br>ONE PLACE.','hero.copy':'Create images, video, audio, ideas and campaigns from one platform. When you need more craft, our team steps in exactly where you left off.','hero.create':'Create now','hero.human':'Bring in a human',
+      'prompt.status':'Intelligent routing active','prompt.label':'What do you want to create today?','prompt.placeholder':'A 15-second cinematic spot for a new coffee brand...','types.image':'Image','types.video':'Video','types.audio':'Audio','types.copy':'Copy','types.campaign':'Campaign','route.route':'ROUTE','route.mode':'MODE','route.why':'WHY',
+      'platform.label':'PLATFORM','platform.title':'ONE PROMPT.<br>THE RIGHT<br><span class="accent">INTELLIGENCE.</span>','platform.copy':'IMPROMPTTU doesn’t make you choose between twenty models. It understands what you want to achieve and routes each task to the best combination of intelligence, quality, speed and cost.','platform.step1':'Describe the idea','platform.step2':'We route the task','platform.step3':'You get the output',
+      'cards.imageTitle':'IMAGE','cards.image':'Concepts, key visuals, edits and brand systems.','cards.video':'Draft fast. Render premium only when it matters.','cards.audio':'Voice, music, sound design and dubbing.','cards.brand':'Your brand context travels with every prompt.',
+      'studio.label':'STUDIO','studio.caption':'HUMAN CRAFT / MACHINE SCALE','studio.eyebrow':"WHEN GOOD ISN'T GOOD ENOUGH",'studio.title':'AI GETS YOU THERE.<br><span>CRAFT TAKES YOU FURTHER.</span>','studio.copy':'Creative direction, design, cinematography, production, VFX/SFX, editing and copywriting. Our team enters the project with all context, references and creative history intact.','studio.cta':'Bring in a human',
+      'expertise.creative':'Creative Direction','expertise.design':'Design + AI Art Direction','expertise.cinema':'Cinematography','expertise.production':'Production','expertise.editing':'Editing + Copy',
+      'ways.label':'THREE WAYS TO WORK','ways.oneTitle':'CREATE IT.','ways.platform':'Platform','ways.oneCopy':'One platform to create with AI without switching tools every five minutes.','ways.oneCta':'Explore Platform →','ways.twoTitle':'MAKE IT<br>EXCEPTIONAL.','ways.studio':'Studio','ways.twoCopy':'Experts who elevate the idea, craft and execution when it matters.','ways.twoCta':'Meet the Studio →','ways.threeTitle':'CHANGE HOW<br>YOU CREATE.','ways.consulting':'Consulting','ways.threeCopy':'We redesign workflows, adoption, governance and AI-powered creative capabilities.','ways.threeCta':'Talk to Consulting →',
+      'pricing.label':'PRICING','pricing.title':'ONE FLAT FEE.<br><span class="accent">SERIOUS CREATIVE POWER.</span>','pricing.copy':'Unlimited text + image creation under fair use, with included video rendering and access to expert craft when you need it.','pricing.create1':'Unlimited* text + image','pricing.create2':'2 min standard video','pricing.create3':'15 sec premium render','pricing.create4':'1 workspace','pricing.popular':'MOST POPULAR','pricing.pro1':'Everything in Create','pricing.pro2':'6 min standard video','pricing.pro3':'60 sec premium render','pricing.pro4':'Brand Brain + priority','pricing.studio1':'Everything in Pro','pricing.studio2':'20 min standard video','pricing.studio3':'180 sec premium render','pricing.studio4':'Teams + collaboration','pricing.startCreate':'Start Create','pricing.startPro':'Start Pro','pricing.startStudio':'Start Studio','pricing.fair':'* Fair-use and rate limits apply. Premium rendering allowance varies by model and resolution.',
+      'final.kicker':'YOUR MOVE','final.title':"THE INTELLIGENCE<br>ISN'T ARTIFICIAL.<br><span>THE POSSIBILITIES ARE.</span>",'final.cta':'What will you create?','footer.one':'Creative Intelligence Platform + Studio.','footer.two':'Human ideas. Machine possibility.'
+    }
+  };
+
+  const routes = {
+    es: {
+      Image:['Ruta de generación visual','Imagen · Adaptativo','Optimizado para composición, fidelidad e iteración rápida.'],
+      Video:['Ruta de video cinematográfico','Boceto → Premium','Primero un boceto eficiente; render premium solo después de aprobar.'],
+      Audio:['Ruta de creación de audio','Voz + Sonido','Enruta voz, música o SFX según el prompt.'],
+      Copy:['Ruta de lenguaje creativo','Estrategia + Copy','Equilibra tono de marca, originalidad e intención de conversión.'],
+      Campaign:['Ruta de campaña multiagente','Estrategia → Oficio','Convierte una idea en tareas de concepto, copy, visual y producción.']
+    },
+    en: {
+      Image:['Visual generation route','Image · Adaptive','Optimized for composition, fidelity and fast iteration.'],
+      Video:['Cinematic video route','Draft → Premium','A low-cost draft first, premium render only after approval.'],
+      Audio:['Audio creation route','Voice + Sound','Routes voice, music or SFX according to the prompt.'],
+      Copy:['Creative language route','Strategy + Copy','Balances brand tone, originality and conversion intent.'],
+      Campaign:['Multi-agent campaign route','Strategy → Craft','Breaks one idea into concept, copy, visual and production tasks.']
+    }
+  };
+
+  const spanishCountries = new Set(['AR','BO','CL','CO','CR','CU','DO','EC','SV','GQ','GT','HN','MX','NI','PA','PY','PE','PR','ES','UY','VE']);
+  const browserLocale = (navigator.languages && navigator.languages[0]) || navigator.language || 'en';
+  const region = (browserLocale.match(/[-_]([A-Z]{2})$/i) || [])[1]?.toUpperCase();
+  const saved = localStorage.getItem('imprompttu-lang');
+  let lang = saved || (browserLocale.toLowerCase().startsWith('es') || spanishCountries.has(region) ? 'es' : 'en');
+  let type = 'Image';
+
   const form = document.getElementById('promptForm');
   const input = document.getElementById('promptInput');
   const chips = [...document.querySelectorAll('.chip')];
   const routeModel = document.getElementById('routeModel');
   const routeMode = document.getElementById('routeMode');
   const routeWhy = document.getElementById('routeWhy');
-  let type = 'Image';
-  const routes = {
-    Image: ['Visual generation route', 'Image · Adaptive', 'Optimized for composition, fidelity and fast iteration.'],
-    Video: ['Cinematic video route', 'Draft → Premium', 'A low-cost draft first, premium render only after approval.'],
-    Audio: ['Audio creation route', 'Voice + Sound', 'Routes voice, music or SFX according to the prompt.'],
-    Copy: ['Creative language route', 'Strategy + Copy', 'Balances brand tone, originality and conversion intent.'],
-    Campaign: ['Multi-agent campaign route', 'Strategy → Craft', 'Breaks one idea into concept, copy, visual and production tasks.']
-  };
-  chips.forEach(chip => chip.addEventListener('click', () => {
-    chips.forEach(c => c.classList.remove('active'));
-    chip.classList.add('active');
-    type = chip.dataset.type;
-    const r = routes[type];
+  const langButtons = [...document.querySelectorAll('.lang-btn')];
+
+  function setRouteDefault(){
+    const r = routes[lang][type];
     routeModel.textContent = r[0]; routeMode.textContent = r[1]; routeWhy.textContent = r[2];
+  }
+  function applyLanguage(next, persist=false){
+    lang = next === 'en' ? 'en' : 'es';
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => { const v=translations[lang][el.dataset.i18n]; if(v) el.textContent=v; });
+    document.querySelectorAll('[data-i18n-html]').forEach(el => { const v=translations[lang][el.dataset.i18nHtml]; if(v) el.innerHTML=v; });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => { const v=translations[lang][el.dataset.i18nPlaceholder]; if(v) el.placeholder=v; });
+    document.querySelectorAll('.price-card h3 small').forEach(el => el.textContent = lang==='es' ? '/mes' : '/mo');
+    langButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.lang===lang));
+    document.title = lang==='es' ? 'IMPROMPTTU — Inteligencia Creativa' : 'IMPROMPTTU — Creative Intelligence';
+    document.querySelector('meta[name="description"]').content = lang==='es' ? 'IMPROMPTTU — Plataforma de Inteligencia Creativa + Estudio.' : 'IMPROMPTTU — Creative Intelligence Platform + Studio.';
+    setRouteDefault();
+    if(persist) localStorage.setItem('imprompttu-lang',lang);
+  }
+
+  langButtons.forEach(btn => btn.addEventListener('click',()=>applyLanguage(btn.dataset.lang,true)));
+  chips.forEach(chip => chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active')); chip.classList.add('active'); type = chip.dataset.type; setRouteDefault();
   }));
   form.addEventListener('submit', e => {
-    e.preventDefault();
-    const text = input.value.trim();
-    if (!text) { input.focus(); return; }
-    const r = routes[type];
-    routeModel.textContent = 'Routing “' + (text.length > 44 ? text.slice(0,44) + '…' : text) + '”';
-    routeMode.textContent = r[1];
-    routeWhy.textContent = 'Prototype mode — the production router will select models dynamically by quality, speed and cost.';
+    e.preventDefault(); const text=input.value.trim(); if(!text){input.focus();return;}
+    const r=routes[lang][type];
+    routeModel.textContent = lang==='es' ? 'Enrutando “'+(text.length>44?text.slice(0,44)+'…':text)+'”' : 'Routing “'+(text.length>44?text.slice(0,44)+'…':text)+'”';
+    routeMode.textContent=r[1];
+    routeWhy.textContent = lang==='es' ? 'Modo prototipo — el router de producción seleccionará dinámicamente los modelos según calidad, velocidad y costo.' : 'Prototype mode — the production router will select models dynamically by quality, speed and cost.';
   });
+
+  applyLanguage(lang,false);
 })();
