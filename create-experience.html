@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>IMPROMPTTU — CREATE Experience</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1eb;--ink:#090909;--muted:#716f6a;--line:#ded9d0;--orange:#ff4d00;--orange2:#ff6a2a;--dark:#0b0d0e;--panel:#121516;--panel2:#191d1f;--green:#64d29b;--amber:#ffad66}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Arial,sans-serif;background:radial-gradient(circle at 95% 7%,#ffd9bd 0,transparent 30%),radial-gradient(circle at 3% 100%,#d6e8ff 0,transparent 30%),var(--bg);color:var(--ink);min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer}.shell{max-width:1500px;margin:auto;padding:24px 28px 48px}.topbar{height:76px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(10,10,10,.12)}
+.logo{display:flex;align-items:center;font-family:Manrope,sans-serif;font-size:27px;letter-spacing:.16em}.prompt-o{width:60px;height:28px;border:2px solid #111;border-radius:15px;display:inline-block;margin:0 4px;position:relative}.prompt-o:after{content:"";position:absolute;right:13px;top:6px;width:2px;height:13px;background:var(--orange)}
+.planpill{display:flex;gap:10px;align-items:center;padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.7);font-size:13px}.dot{width:8px;height:8px;border-radius:50%;background:var(--green)}
+.hero{display:grid;grid-template-columns:430px 1fr;gap:24px;padding-top:28px}.rail{padding:10px 18px 0 2px}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:var(--orange);font-weight:700}.rail h1{font-family:Manrope,sans-serif;font-size:52px;line-height:.96;margin:14px 0 18px;letter-spacing:-.045em}.rail p{font-size:16px;line-height:1.55;color:#5d5a54;max-width:370px}.step{display:flex;gap:12px;align-items:flex-start;margin:22px 0}.num{width:30px;height:30px;border-radius:50%;border:1px solid var(--orange);color:var(--orange);display:grid;place-items:center;font-size:12px;font-weight:700;flex:0 0 auto}.step b{display:block;font-size:14px;margin-bottom:4px}.step span{font-size:13px;color:var(--muted);line-height:1.4}
+.app{background:var(--dark);border-radius:28px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.17);min-height:760px;color:#f4f4f1;display:grid;grid-template-columns:230px 1fr}.sidebar{border-right:1px solid #25292b;padding:22px 16px;background:#0d1011}.slogo{font-family:Manrope;font-size:14px;letter-spacing:.14em;margin:6px 8px 28px}.nav{padding:10px 11px;border-radius:10px;margin:4px 0;color:#aeb3b5;font-size:13px}.nav.active{background:#1b1f20;color:white}.nav small{float:right;color:#7b8082}.usage{margin-top:30px;padding:13px;border:1px solid #292e30;border-radius:12px}.usage h4{font-size:12px;margin:0 0 10px;color:#cfd3d4}.bar{height:5px;background:#2a2f31;border-radius:999px;overflow:hidden}.bar i{display:block;height:100%;width:36%;background:var(--orange)}.usage p{font-size:10px;color:#858b8d;line-height:1.5;margin:8px 0 0}
+.main{padding:26px 28px}.apphead{display:flex;justify-content:space-between;align-items:start}.apphead h2{font-family:Manrope;font-size:29px;margin:0 0 5px}.apphead p{margin:0;color:#8f9699;font-size:13px}.brandstatus{font-size:11px;padding:8px 11px;border:1px solid #2d3932;border-radius:999px;color:#9be0bc;background:#132119}.grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px;margin-top:22px}.card{background:var(--panel);border:1px solid #24292b;border-radius:18px;padding:18px}.card h3{font-family:Manrope;font-size:16px;margin:0 0 6px}.card .sub{font-size:11px;color:#80878a;margin-bottom:14px}.brief textarea{width:100%;height:165px;resize:none;background:#0d1011;border:1px solid #303638;color:white;border-radius:14px;padding:15px;line-height:1.5;outline:none}.brief textarea:focus{border-color:var(--orange)}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:11px}.chip{font-size:10px;padding:7px 9px;border:1px solid #303537;border-radius:999px;color:#b7bdc0}.chip.on{border-color:#8a4b2d;color:#ffb28e;background:#211611}.actions{display:flex;justify-content:space-between;align-items:center;margin-top:14px}.hint{font-size:10px;color:#737a7d}.create{border:none;background:var(--orange);color:#fff;border-radius:11px;padding:11px 17px;font-weight:700;font-size:12px}.create:disabled{opacity:.5}.brainrow{display:flex;justify-content:space-between;border-top:1px solid #282d2f;padding:12px 0;font-size:11px}.brainrow:first-of-type{border-top:0}.brainrow span{color:#7f8688}.lock{color:#ffbd93;font-size:10px}.output{grid-column:1 / -1;display:grid;grid-template-columns:1fr 1.05fr;gap:18px;min-height:280px}.creative{border-radius:14px;overflow:hidden;position:relative;min-height:260px;background:linear-gradient(135deg,#1b1e20,#101213)}.visual{position:absolute;inset:0;background:radial-gradient(circle at 72% 33%,rgba(255,93,30,.8),transparent 24%),linear-gradient(130deg,transparent 35%,rgba(255,255,255,.09) 36%,transparent 54%),linear-gradient(25deg,#121415,#24282b)}.visual:after{content:"YOUR IDEA.\A THE RIGHT INTELLIGENCE.\A ONE PLACE.";white-space:pre;position:absolute;left:30px;bottom:30px;font:700 28px/1.05 Manrope;color:white;letter-spacing:-.04em}.meta{display:flex;gap:8px;position:absolute;left:28px;top:25px}.meta b{font-size:9px;text-transform:uppercase;padding:5px 7px;border:1px solid rgba(255,255,255,.25);border-radius:999px}.review h4{margin:0 0 12px;font-size:12px;color:#9ba2a4}.route{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.route div{background:#0d1011;border-radius:11px;padding:10px}.route b{font-size:11px}.route span{display:block;font-size:9px;color:#737a7d;margin-top:5px}.copy{margin-top:12px;background:#0d1011;border-radius:12px;padding:12px}.copy strong{font-size:12px}.copy p{font-size:11px;color:#9da4a6;line-height:1.45;margin:8px 0 0}.notice{margin-top:12px;border:1px solid #4b362a;background:#1a1411;color:#dda680;border-radius:12px;padding:10px;font-size:10px}.progress{display:none;margin-top:12px;font-size:11px;color:#bbb}.progress.show{display:block}.progress span{color:var(--orange)}
+@media(max-width:1000px){.hero{grid-template-columns:1fr}.rail{padding-bottom:8px}.rail h1{font-size:42px}.app{grid-template-columns:180px 1fr}.grid{grid-template-columns:1fr}.output{grid-template-columns:1fr}.shell{padding:14px}.sidebar{display:none}.app{grid-template-columns:1fr}.topbar{height:64px}.logo{font-size:20px}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="topbar">
+    <div class="logo">IMPR<span class="prompt-o"></span>MPTTU</div>
+    <div class="planpill"><span class="dot"></span><b>CREATE</b> · US$59/mes <span style="color:#8a8882">Modo demo</span></div>
+  </div>
+
+  <div class="hero">
+    <aside class="rail">
+      <div class="eyebrow">Experiencia de cliente · CREATE</div>
+      <h1>Tu marca entra.<br>La complejidad sale.</h1>
+      <p>Esta prueba simula cómo se sentiría IMPROMPTTU desde el plan de entrada: un brief en lenguaje natural, Brand Brain básico y una ruta creativa sin escoger modelos.</p>
+      <div class="step"><div class="num">1</div><div><b>Describe lo que necesitas</b><span>No prompts técnicos. Solo tu objetivo, audiencia y contexto.</span></div></div>
+      <div class="step"><div class="num">2</div><div><b>Tu marca aporta contexto</b><span>El Brand Brain básico mantiene tono, lineamientos y activos esenciales.</span></div></div>
+      <div class="step"><div class="num">3</div><div><b>IMPROMPTTU decide la ruta</b><span>La orquestación sucede detrás. Tú ves la propuesta, no la complejidad.</span></div></div>
+      <div class="step"><div class="num">4</div><div><b>Aprueba antes de gastar premium</b><span>Primero dirección y draft. El render premium se usa solo cuando vale la pena.</span></div></div>
+    </aside>
+
+    <section class="app">
+      <nav class="sidebar">
+        <div class="slogo">IMPROMPTTU</div>
+        <div class="nav active">⌁ Crear</div>
+        <div class="nav">◫ Proyectos <small>3</small></div>
+        <div class="nav">◎ Brand Brain</div>
+        <div class="nav">✓ Aprobaciones</div>
+        <div class="nav">◌ Biblioteca</div>
+        <div class="nav">◇ Upgrade</div>
+        <div class="usage">
+          <h4>Uso de este mes</h4>
+          <div class="bar"><i></i></div>
+          <p>Video estándar: 0:43 / 2:00 min<br>Premium render: 0 / 15 sec<br>Texto + imagen: fair use activo</p>
+        </div>
+      </nav>
+
+      <main class="main">
+        <div class="apphead">
+          <div><h2>¿Qué vamos a crear?</h2><p>Dímelo como se lo explicarías a un director creativo.</p></div>
+          <div class="brandstatus">● Brand Brain activo</div>
+        </div>
+
+        <div class="grid">
+          <section class="card brief">
+            <h3>Nuevo briefing</h3><div class="sub">Tu idea entra aquí. Nosotros resolvemos la ruta.</div>
+            <textarea id="brief">Necesito una campaña de lanzamiento para una nueva línea de café panameño premium. Quiero una pieza hero para Instagram y una idea de video de 15 segundos. Debe sentirse sofisticada, contemporánea y humana; nada de clichés turísticos.</textarea>
+            <div class="chips"><div class="chip on">Campaña</div><div class="chip">Imagen</div><div class="chip">Video</div><div class="chip">Copy</div><div class="chip">Audio</div></div>
+            <div class="actions"><span class="hint">CREATE incluye dirección + draft antes del render premium.</span><button class="create" id="createBtn">Crear propuesta →</button></div>
+            <div class="progress" id="progress">Leyendo Brand Brain… <span id="stage">preparando contexto</span></div>
+          </section>
+
+          <section class="card">
+            <h3>Brand Brain · Básico</h3><div class="sub">La memoria mínima para no empezar de cero.</div>
+            <div class="brainrow"><b>Tono de voz</b><span>Seguro · humano · preciso</span></div>
+            <div class="brainrow"><b>Paleta</b><span>Negro · crema · naranja</span></div>
+            <div class="brainrow"><b>Regla visual</b><span>Editorial, no genérico</span></div>
+            <div class="brainrow"><b>Activos cargados</b><span>6 elementos</span></div>
+            <div class="brainrow"><b>Campañas históricas</b><span class="lock">PRO ↗</span></div>
+            <div class="brainrow"><b>Perfiles avanzados</b><span class="lock">PRO ↗</span></div>
+          </section>
+
+          <section class="card output">
+            <div class="creative"><div class="visual"></div><div class="meta"><b>Draft</b><b>Brand aligned</b></div></div>
+            <div class="review">
+              <h3>Dirección propuesta</h3>
+              <div class="sub">Lo importante primero: la idea. El modelo queda detrás.</div>
+              <div class="route"><div><b>Estrategia</b><span>Territorio + mensaje</span></div><div><b>Visual</b><span>Hero concept</span></div><div><b>Motion</b><span>Storyboard 15s</span></div></div>
+              <div class="copy"><strong>Concepto: “El origen no necesita explicación.”</strong><p>Tratamiento editorial: textura, gesto humano y producto como objeto de diseño. Copy corto; Panamá aparece como procedencia y credencial, no como postal.</p></div>
+              <div class="notice">Premium render aún no utilizado. Aprueba la dirección y entonces IMPROMPTTU destina tus 15 segundos incluidos al render final.</div>
+            </div>
+          </section>
+        </div>
+      </main>
+    </section>
+  </div>
+</div>
+<script>
+const btn=document.getElementById('createBtn'), progress=document.getElementById('progress'), stage=document.getElementById('stage');
+const stages=['leyendo reglas de marca','interpretando intención','seleccionando la mejor ruta','construyendo dirección creativa','draft listo · premium intacto'];
+btn.addEventListener('click',()=>{btn.disabled=true;progress.classList.add('show');let i=0;stage.textContent=stages[0];const t=setInterval(()=>{i++;if(i>=stages.length){clearInterval(t);btn.disabled=false;btn.textContent='Refinar propuesta →';return;}stage.textContent=stages[i]},700)});
+document.querySelectorAll('.chip').forEach(c=>c.onclick=()=>c.classList.toggle('on'));
+</script>
+</body>
+</html>
